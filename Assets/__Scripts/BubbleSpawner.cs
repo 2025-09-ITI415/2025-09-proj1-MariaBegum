@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class BubbleSpawner : MonoBehaviour
 {
-    public GameObject bubblePrefab;
-    public float spawnRate = 1.5f;
+    public GameObject bubblePrefab; // drag the prefab here
+    public float spawnRate = 1.5f;  // seconds between bubbles
 
     void Start()
     {
