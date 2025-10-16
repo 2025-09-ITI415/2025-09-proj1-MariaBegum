@@ -1,25 +1,24 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class BubblePop : MonoBehaviour
 {
-    public float speed = 1f;  // how fast it floats up
-    public int scoreValue = 1;
+    public float speed = 1f;  // how fast the bubble floats
 
     void Update()
     {
         transform.Translate(Vector3.up * speed * Time.deltaTime);
 
-        // Destroy if it floats too high
+        // Missed bubble if it floats too high
         if (transform.position.y > 5)
         {
+            ScoreManager.instance.MissBubble();
             Destroy(gameObject);
         }
     }
 
     void OnMouseDown()
     {
-        Debug.Log("Pop!");
-        ScoreManager.instance.AddScore(scoreValue);
+        ScoreManager.instance.AddScore(1);
         Destroy(gameObject);
     }
 }
